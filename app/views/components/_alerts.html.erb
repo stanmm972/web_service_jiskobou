@@ -1,4 +1,5 @@
-<div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-</div>
+<% if notice.present? %>
+    <p class="notice bg-success"><%= notice %></p>
+<% elsif alert.present? %>
+    <p class="alert bg-danger"><%= alert %></p>
+<% end %>
