@@ -12,7 +12,11 @@
           <div class="fa fa-home"></div>
           Home
         <% end %>
-      </ul>
+        <%= link_to jobs_path, class: "nav-link #{'active font-weight-bold' if current_page?(jobs_path)}" do %>
+          <div class="fa fa-briefcase"></div>
+          Jobs
+        <% end %> 
+      </ul>     
       <ul class="navbar-nav mr-right">
         <% if current_user %>
           <li class="nav-item dropdown">
