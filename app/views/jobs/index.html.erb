@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <h1>All Jobs listed</h1>
+        <ul>
+            <% @jobs.each do |job| %>
+                <li><%= link_to job.title, job_path(job) %></li>
+            <% end %>
+        </ul>
+    </div>
+        <%= link_to "Create a new job", new_job_path, :class => "btn btn-primary" %>
+</div>

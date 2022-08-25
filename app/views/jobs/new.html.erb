@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Create new Job</h1>
+    <%= simple_form_for @job do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :title %>
+
+        <%= f.input :description %>
+
+        <%= f.input :start_time %>
+
+        <%= f.input :end_time %>
+
+        <%= f.button :submit, class: "btn-primary" %>
+        
+    <% end %>
+</div>

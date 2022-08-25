@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>New Job created</h2>
+    
+    Title: <%= @job.title %>
+    <br>
+    Description: <%= @job.description %>
+    <br>
+    Start time: <%= @job.start_time %>
+    <br>
+    End time: <%= @job.end_time %>
+    <br>
+    <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
+    <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
+    <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+</div>
