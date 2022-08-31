@@ -1,0 +1,26 @@
+<h1><%= @user.full_name %></h1>
+
+
+<h2>Bio</h2>
+<p><%= @user.bio %></p>
+
+<% if current_user.id || @user.admin? == @user.id || @user.admin? %>
+    <%= link_to "Edit my profile", edit_user_path(current_user), class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "New message", new_user_message_path(@user) %>
+
+<div class="container">
+    <h2>Message</h2>
+    <p></p>
+    <ul class="list-group">
+        <% @user.messages.order("created_at DESC").each do |message| %>
+            <li class="list-group-item">
+                <h3><%= message.title %></h3><br>
+                <i><%= message.created_at.strftime("%Y-%m-%d") %></i>
+                <p><%= message.body %></p><br>
+                <%= link_to "Delete", user_message_path(message), method: :delete, data: {confirm: "Are you sure!?"}, class: "btn btn-danger" %>
+            </li>
+        <% end %>
+    </ul>
+</div>

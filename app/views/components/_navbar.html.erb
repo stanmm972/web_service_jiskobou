@@ -16,10 +16,18 @@
           <div class="fa fa-briefcase"></div>
           Jobs
         <% end %> 
-        <%= link_to messages_path, class: "nav-link #{'active font-weight-bold' if current_page?(messages_path)}" do %>
-          <div class="fa fa-message"></div>
-          Messages
+        
+        
+        <%= link_to users_path, class: "nav-link #{'active font-weight-bold' if current_page?(users_path)}" do %>
+          <div class="fa fa-users"></div>
+          Users
         <% end %> 
+        <%= link_to current_user, class: "nav-link #{'active font-weight-bold' if current_page? current_user}" do %>
+          <div class="fa fa-user"></div>
+          User
+        <% end %> 
+          
+        
       </ul>
       <ul class="navbar-nav mr-right">
         <% if current_user %>
@@ -39,7 +47,7 @@
               <% end %>
             </div>
           </li>
-        <% else %>
+        <% elsif %>
           <%= link_to "Log in", new_user_session_path, class: "nav-link #{'active font-weight-bold' if current_page?(new_user_session_path)}" %>
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link #{'active font-weight-bold' if current_page?(new_user_registration_path)}" %>
         <% end %>

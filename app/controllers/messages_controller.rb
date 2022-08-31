@@ -1,39 +1,29 @@
 class MessagesController < ApplicationController
 
 
-    def index
-        @messages = Message.all
-    end
-
-    def show
-        @message = Message.find(params[:id])
-    end
+    
 
     def new
-        @message = Message.new
+       # @message = Message.new
+       @user = User.find(params[:user_id])
+       @message = Message.new
     end
 
     def create
         @message = Message.new(message_params)
-        @message.user = current_user
-        @message.save
-        redirect_to message_path(@message)
-    end
-
-    def edit
-        @message = Message.find(params[:id])
-    end
-
-    def update
-        @message = Message.find(params[:id])
-        @message.update(message_params)
-        redirect_to message_path(@message)
+        @user = User.find(params[:user_id])
+        @message.user = @user
+        if @message.save
+            redirect_to user_path(@user)
+        else
+            render :new, status: :unprocessable_entity
+        end
     end
 
     def destroy
         @message = Message.find(params[:id])
         @message.destroy
-        redirect_to messages_path, status: :see_other
+        redirect_to user_path(@message.user), status: :see_other
     end
 
     private
