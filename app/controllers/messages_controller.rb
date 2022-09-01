@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
     end
 
     def destroy
-        @message = Message.find(params[:id])
+        @message = Message.find(params[:user_id])
         @message.destroy
         redirect_to user_path(@message.user), status: :see_other
     end
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     private
 
     def message_params
-        params.require(:message).permit(:title, :body)
+        params.require(:message).permit(:title, :body, :document)
     end
     
 end

@@ -19,6 +19,9 @@
                 <h3><%= message.title %></h3><br>
                 <i><%= message.created_at.strftime("%Y-%m-%d") %></i>
                 <p><%= message.body %></p><br>
+                <% if message.document.attached? %>
+                    <%= link_to message.document.filename, :flag=>"attachment" %>
+                <% end %>
                 <%= link_to "Delete", user_message_path(message), method: :delete, data: {confirm: "Are you sure!?"}, class: "btn btn-danger" %>
             </li>
         <% end %>
