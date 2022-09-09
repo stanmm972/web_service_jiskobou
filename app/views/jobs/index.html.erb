@@ -1,11 +1,29 @@
 <div class="container">
-    <div class="row">
+    <div class="text-center my-5">
         <h1>All Jobs listed</h1>
+    </div>
+    <div>
         <ul>
             <% @jobs.each do |job| %>
-                <li><%= link_to job.title, job_path(job) %></li>
+                <div class="card mb-3">
+                    <div class="card-body">
+                    <div class="d-flex flex-column flex-lg-row">       
+                        <div class="row flex-fill">
+                        <div class="col-sm-11">
+                            <h4 class="h5"><i class="fa-regular fa-hospital"></i> <%= link_to job.title, job_path(job) %></h4>
+                            <span class="badge bg-warning"><i class="fa-solid fa-map-location-dot"></i> <%= job.description %></span>
+                        </div>
+                        <div class="col-sm-1">
+                            <a href="#" class="btn btn-success">Apply</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             <% end %>
         </ul>
     </div>
+    <div class="my-5">
         <%= link_to "Create a new job", new_job_path, :class => "btn btn-primary" %>
+    </div>
 </div>
