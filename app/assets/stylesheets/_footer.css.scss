@@ -1,0 +1,12 @@
+.logo {
+    width: 100px;
+  }
+
+.icon{
+  font-size: 20px;
+  color: black;
+  width: 30px;
+  &:hover{
+    color: lightgrey;
+  }
+}
