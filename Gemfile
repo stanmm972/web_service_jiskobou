@@ -26,6 +26,7 @@ gem 'devise'
 gem 'simple_form'
 gem "simple_calendar", "~> 2.4"
 gem "cloudinary"
+gem "font-awesome-sass", "~> 6.2.0"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
