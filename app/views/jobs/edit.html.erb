@@ -2,13 +2,13 @@
     <h2>Edit job</h2>
 
     <%= simple_form_for(@job) do |f| %>
-      Title: <%= f.input :title %>
+      <%= f.input :title %>
       <br>
-      Description: <%= f.input :description %>
+      <%= f.input :description %>
       <br>
-      Start at: <%= f.input :start_time %>
+      <%= f.input :start_time %>
       <br>
-      End at :<%= f.input :end_time %>
+      <%= f.input :end_time %>
       <br>
       <%= f.button :submit, class: "btn-primary" %>
     <% end %>

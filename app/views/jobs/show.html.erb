@@ -1,15 +1,28 @@
-<div class="container">
-    <h2>New Job created</h2>
-    
-    Title: <%= @job.title %>
-    <br>
-    Description: <%= @job.description %>
-    <br>
-    Start time: <%= @job.start_time %>
-    <br>
-    End time: <%= @job.end_time %>
-    <br>
-    <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
-    <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
-    <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+<div class="container text-center py-5">
+    <div class="col-md-6 col-lg-12">
+        <h2>New Job created</h2>
+        <div class="card hover-shadow">
+            <div class="card-body text-center pt-1 pb-20">
+            <a href="#">
+                <%= image_tag "hospital.png", alt: "cartoon hospital image", width: 300 %>
+            </a>
+            <h5 class="mt-2 mb-0">Job title: <%= @job.title %></h5>
+            <div class="mt-20">
+                <p>Job description: <%= @job.description %></p>
+            </div>
+            </div>
+          <footer class="card-footer flexbox text-center">
+            <div>
+                Start time: <%= @job.start_time.strftime("%B %d, %Y at %H:%M %p") %>
+                |
+                End time: <%= @job.end_time.strftime("%B %d, %Y at %H:%M %p") %>
+            </div>
+          </footer>
+        </div>
+        <div class="py-5">
+            <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
+            <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
+            <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+        </div>
+    </div>
 </div>

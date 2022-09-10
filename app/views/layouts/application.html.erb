@@ -11,11 +11,14 @@
   </head>
 
   <body>
-    <%= render "components/navbar" %>
-    <%= render "components/banner" %>
+    <% if current_user %>
+      <%= render "components/navbar" %>
+      <%= render "components/banner" %>
+    <% end %>
     <%= render "components/alerts" %>
     <%= yield %>
-    <%= render "components/footer" %>
-
+    <% if current_user %>
+      <%= render "components/footer" %>
+    <% end %>
   </body>
 </html>

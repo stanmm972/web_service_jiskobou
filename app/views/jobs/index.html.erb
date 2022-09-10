@@ -4,16 +4,20 @@
     </div>
     <div>
         <ul>
-            <% @jobs.each do |job| %>
+            <% @jobs.order("created_at DESC").each do |job| %>
                 <div class="card mb-3">
                     <div class="card-body">
                     <div class="d-flex flex-column flex-lg-row">       
                         <div class="row flex-fill">
-                        <div class="col-sm-11">
+                        <div class="col-sm-5">
                             <h4 class="h5"><i class="fa-regular fa-hospital"></i> <%= link_to job.title, job_path(job) %></h4>
                             <span class="badge bg-warning"><i class="fa-solid fa-map-location-dot"></i> <%= job.description %></span>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-4 py-2">
+                            <span class="badge bg-info"><i class="fa-sharp fa-solid fa-hourglass-start"></i> <%= job.start_time.strftime("%B %d, %Y at %H:%M %p") %></span>
+                            <span class="badge bg-info"><i class="fa-sharp fa-solid fa-hourglass-end"></i> <%= job.end_time.strftime("%B %d, %Y at %H:%M %p") %></span>
+                          </div>
+                        <div class="col-sm-3">
                             <a href="#" class="btn btn-success">Apply</a>
                         </div>
                         </div>
