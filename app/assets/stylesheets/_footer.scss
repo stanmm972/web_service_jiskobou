@@ -10,3 +10,9 @@
     color: lightgrey;
   }
 }
+
+@media (max-width: 480px) {
+  .icon{
+    display: none !important;
+  }
+}

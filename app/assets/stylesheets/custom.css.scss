@@ -4,4 +4,13 @@
 @import 'footer';
 @import 'jobs';
 @import 'users';
+@import 'devise';
+
+.green{
+    height: 100vh;
+    background-image: url(intro.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 

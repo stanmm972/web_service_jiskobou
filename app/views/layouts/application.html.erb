@@ -16,6 +16,11 @@
       <%= render "components/banner" %>
     <% end %>
     <%= render "components/alerts" %>
+    <% if signed_in? %>
+      
+    <% else %>
+      <li class="green">
+    <% end %>
     <%= yield %>
     <% if current_user %>
       <%= render "components/footer" %>
