@@ -1,5 +1,9 @@
 <% if notice.present? %>
-    <p class="notice bg-success"><%= notice %></p>
+    <div class="container">
+        <p class="notice bg-success"><%= notice %></p>
+    </div>
 <% elsif alert.present? %>
-    <p class="alert bg-danger"><%= alert %></p>
+    <div class="container">
+        <p class="alert bg-danger"><%= alert %></p>
+    </div>
 <% end %>

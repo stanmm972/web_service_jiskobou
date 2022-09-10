@@ -1,6 +1,6 @@
 <div class="container text-center py-5">
     <div class="col-md-6 col-lg-12">
-        <h2>New Job created</h2>
+        <h2>New job available</h2>
         <div class="card hover-shadow">
             <div class="card-body text-center pt-1 pb-20">
             <a href="#">
@@ -20,9 +20,10 @@
           </footer>
         </div>
         <div class="py-5">
-            <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
-            <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
-            <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+            <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> <% if current_user.admin? %> |           
+                <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
+                <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+            <% end %>
         </div>
     </div>
 </div>
