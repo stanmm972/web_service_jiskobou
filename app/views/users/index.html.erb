@@ -8,11 +8,12 @@
                         <thead>
                             <% @users.order("created_at ASC").each do |user| %>
                             <tr>
-                                <th><span>User id: <%= user.id %></span></th>
-                                <th><span>Created</span></th>
+                                <th class="text-center"><span>User id: <%= user.id %></span></th>
+                                <th class="text-center"><span>Created</span></th>
                                 <th class="text-center"><span>First name</span></th>
                                 <th class="text-center"><span>Last name</span></th>
-                                <th><span>Email</span></th>
+                                <th class="text-center"><span>Email</span></th>
+                                <th class="text-center"><span>Action</span></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,9 @@
                                 </td>
                                 <td>
                                     <%= link_to user.email, user_path(user) %>
+                                </td>
+                                <td>
+                                    <%= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Really delete this user?" }, class: "btn btn-outline-danger" %>
                                 </td>
                             </tr>
                             <% end %>
