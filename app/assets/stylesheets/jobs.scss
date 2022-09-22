@@ -25,6 +25,14 @@
     padding: 1.5rem 1.5rem;
 }
 
+.available {
+    background-color: rgb(12, 246, 12);
+}
+
+.unavailable {
+    background-color: rgb(255, 0, 0);
+}
+
 @media (max-width: 480px) {
     .hospital{
         width: 150px;

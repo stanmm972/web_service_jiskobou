@@ -10,6 +10,8 @@
       <br>
       <%= f.input :end_time %>
       <br>
+      <%= f.input :status_type, :collection => ([['Available', 'Available'], ['Unavailable', 'Unavailable']]) %>
+      <br>
       <%= f.button :submit, class: "btn-primary" %>
     <% end %>
     <br>

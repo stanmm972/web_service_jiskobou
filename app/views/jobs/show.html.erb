@@ -1,6 +1,10 @@
 <div class="container text-center py-5">
     <div class="col-md-6 col-lg-12">
-        <h2>New job available</h2>
+        <% if @job.status_type === 'Available' %>
+        <h2 class="available">New job available</h2>
+        <% else %>
+        <h2 class="unavailable">Job unavailable</h2>
+        <% end %>
         <div class="card hover-shadow">
             <div class="card-body text-center pt-1 pb-20">
             <a href="#">
