@@ -5,9 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :messages, dependent: :destroy
+         has_many :jobs, dependent: :destroy
 
 
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def to_s
+    full_name
+  end
+
+  
 end

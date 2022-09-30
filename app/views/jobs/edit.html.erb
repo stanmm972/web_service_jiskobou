@@ -1,21 +1,31 @@
 <div class="container">
-    <h2>Edit job</h2>
+  <h2>Edit a job</h2>
+  <%= simple_form_for(@job) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+  <div class="form-inputs">
+        <%= f.input :title %>
+        <br>
+        <%= f.input :description %>
+        <br>
+        <%= f.input :start_time %>
+        <br>
+        <%= f.input :end_time %>
+        <br>
+        <%= f.input :status_type, :collection => ([['Available', 'Available'], ['Unavailable', 'Unavailable']]) %>
+        <br>
+        <%= f.association :user %>
+        <br>
+  </div>
+  
+  <div class="form-actions">
+    <hr>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+  <% end %>
 
-    <%= simple_form_for(@job) do |f| %>
-      <%= f.input :title %>
-      <br>
-      <%= f.input :description %>
-      <br>
-      <%= f.input :start_time %>
-      <br>
-      <%= f.input :end_time %>
-      <br>
-      <%= f.input :status_type, :collection => ([['Available', 'Available'], ['Unavailable', 'Unavailable']]) %>
-      <br>
-      <%= f.button :submit, class: "btn-primary" %>
-    <% end %>
-    <br>
     <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
-    <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
     <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+</div>
 </div>
