@@ -14,12 +14,23 @@
           <footer class="card-footer flexbox text-center">
             <div>
                 <% if current_user.id || @user.admin? == @user.id || @user.admin? %>
-                    <%= link_to "Edit my profile", edit_user_path(current_user), class: "btn btn-primary" %>
+                    <%= link_to edit_user_path(current_user), class: "btn btn-primary" do %>               
+                    <div class="fa-solid fa-id-card"></div>
+                        Profile
+                    <% end %> 
+                    |
+                    <%= link_to calendar_user_path(current_user), class: "btn btn-success" do %>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        Calendar
+                    <% end %>
                 <% end %>
             </div>
           </footer>
         </div>
-        <%= link_to "New message", new_user_message_path(@user), class: "btn btn-success my-5" %>
+        <%= link_to new_user_message_path(@user), class: "btn btn-success my-5" do %>
+            <i class="fa-solid fa-message"></i>
+                Message
+            <% end %> 
     </div>
 </div>
 

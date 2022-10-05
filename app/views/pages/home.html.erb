@@ -26,7 +26,7 @@
                 <p class="card-text">From: <%= job.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %></p>
                 <p class="card-text">To: <%= job.end_time.strftime('%A, %B %d, %Y at %I:%M %p') %></p>
                 <% if current_user.admin? %>
-                  <p class="card-text"><%= job.user_full_name %></p>
+                  <p class="card-text">Assigned to: <%= job.user_full_name %></p>
                 <% end %>
             </div>
           </div>

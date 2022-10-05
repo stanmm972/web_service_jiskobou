@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   resources :users do
     resources :messages
+    member do
+      get 'calendar'
+    end
   end
   root 'pages#home'
 end

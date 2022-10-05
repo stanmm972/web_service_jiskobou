@@ -37,7 +37,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path, status: :see_other
-end
+  end
+
+  def calendar
+    @jobs = Job.where(
+      start_time: Time.now.beginning_of_month.beginning_of_week..Time.now.end_of_month.end_of_week
+    )
+  end
 
   private
 
