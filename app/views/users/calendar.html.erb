@@ -1,5 +1,5 @@
-<div class="container">
-    <h2 class="text-center"><%= current_user.first_name %>'s calendar</h2>
+<div class="container py-5">
+    <h2 class="text-center py-5"><%= current_user.first_name %>'s calendar</h2>
     <div class="jumbotron">
         <%= month_calendar(events: @jobs) do |date, jobs| %>
           <div class="day">
