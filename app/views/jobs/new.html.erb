@@ -1,5 +1,5 @@
-<div class="container">
-  <h2>Create a job</h2>
+<div class="container py-5">
+  <h2 class="text-center py-2 alert alert-info">Create a job</h2>
   <%= simple_form_for(@job) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>

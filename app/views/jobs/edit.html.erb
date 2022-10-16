@@ -1,5 +1,5 @@
-<div class="container">
-  <h2>Edit a job</h2>
+<div class="container py-5">
+  <h2 class="text-center py-2 alert alert-warning">Edit a job</h2>
   <%= simple_form_for(@job) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -24,8 +24,8 @@
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
   <% end %>
-
-    <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> | 
-    <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+    <br>
+    <%= link_to "Back", jobs_path, :class => "btn btn-light" %> | 
+    <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-outline-danger" %>
 </div>
 </div>

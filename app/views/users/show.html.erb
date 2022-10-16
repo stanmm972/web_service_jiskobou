@@ -27,7 +27,7 @@
             </div>
           </footer>
         </div>
-        <%= link_to new_user_message_path(@user), class: "btn btn-success my-5" do %>
+        <%= link_to new_user_message_path(@user), class: "btn btn-outline-success my-5" do %>
             <i class="fa-solid fa-message"></i>
                 Message
         <% end %> 
@@ -47,7 +47,7 @@
                 <% if message.document.attached? %>
                     <%=  link_to message.document.key %>
                 <% end %>
-                <%= link_to "Delete", user_message_path(message), method: :delete, data: {confirm: "Are you sure!?"}, class: "btn btn-danger" %>
+                <%= link_to "Delete", user_message_path(message), method: :delete, data: {confirm: "Are you sure!?"}, class: "btn btn-outline-danger" %>
             </li>
         <% end %>
     </ul>

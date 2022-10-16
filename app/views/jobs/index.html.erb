@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="text-center my-5">
+    <div class="text-center my-5 alert alert-warning">
         <h1>All Jobs listed</h1>
     </div>
     <div>
@@ -9,17 +9,17 @@
                     <div class="card-body">
                     <div class="d-flex flex-column flex-lg-row">       
                         <div class="row flex-fill">
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
                             <h4 class="h5"><i class="fa-regular fa-hospital"></i> <%= link_to job.title, job_path(job) %></h4>
                             <span class="badge bg-warning"><i class="fa-solid fa-map-location-dot"></i> <%= job.description %></span>
                         </div>
-                        <div class="col-sm-4 py-2">
-                            <span class="badge bg-info"><i class="fa-sharp fa-solid fa-hourglass-start"></i> <%= job.start_time.strftime("%B %d, %Y at %H:%M %p") %></span>
-                            <span class="badge bg-info"><i class="fa-sharp fa-solid fa-hourglass-end"></i> <%= job.end_time.strftime("%B %d, %Y at %H:%M %p") %></span>
+                        <div class="col-sm-7 py-2">
+                            <div class="alert alert-success text-center"><i class="fa-sharp fa-solid fa-hourglass-start"></i> <%= job.start_time.strftime("%B %d, %Y at %H:%M %p") %></div><br>
+                            <div class="alert alert-danger text-center"><i class="fa-sharp fa-solid fa-hourglass-end"></i> <%= job.end_time.strftime("%B %d, %Y at %H:%M %p") %></div>
                           </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-2">
                             <% if job.status_type === 'Available' %>
-                                <a href="mailto:jiskobou.inc@gmail.com " class="btn btn-success">Apply</a>
+                                <a href="mailto:jiskobou.inc@gmail.com " class="btn btn-outline-success">Apply</a>
                             <% end %>
                         </div>
                         </div>

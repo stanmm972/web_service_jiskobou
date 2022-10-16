@@ -1,9 +1,9 @@
 <div class="container text-center py-5">
     <div class="col-md-6 col-lg-12">
         <% if @job.status_type === 'Available' %>
-        <h2 class="available">New job available</h2>
+        <h2 class="alert alert-success">New job available</h2>
         <% else %>
-        <h2 class="unavailable">Job unavailable</h2>
+        <h2 class="alert alert-danger">Job unavailable</h2>
         <% end %>
         <div class="card hover-shadow">
             <div class="card-body text-center pt-1 pb-20">
@@ -24,9 +24,9 @@
           </footer>
         </div>
         <div class="py-5">
-            <%= link_to "Back", jobs_path, :class => "btn btn-secondary" %> <% if current_user.admin? %> |           
-                <%= link_to "Edit", edit_job_path, :class => "btn btn-warning" %> |
-                <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-danger" %>
+            <%= link_to "Back", jobs_path, :class => "btn btn-light" %> <% if current_user.admin? %> |           
+                <%= link_to "Edit", edit_job_path, :class => "btn btn-info" %> |
+                <%= link_to "Delete", @job, method: :delete, data: {confirm: "Are you sure!?"}, :class => "btn btn-outline-danger" %>
             <% end %>
         </div>
     </div>
