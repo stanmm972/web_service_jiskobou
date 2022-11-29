@@ -81,7 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
   database: web_service_jiskobou_production
   username: web_service_jiskobou
   password: <%= ENV['WEB_SERVICE_JISKOBOU_DATABASE_PASSWORD'] %>
